@@ -33,7 +33,7 @@ Requried Information for authorization
 ---
 
 | columns | definition |
-|:---:|:---|
+|:---|:---|
 | continent |Name of continent that the country belongs to|
 | country |Name of country|
 | rank |Rank in data charts obtained from website is based on daily play counts in the country, which is not supported in API. We assume the rank as ascending order which is returned by API in its track information.|
