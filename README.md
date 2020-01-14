@@ -5,9 +5,7 @@ README
 
 ### Introduction
 ---
-Spotify is a digital music service that gives users access to millions of songs and has a huge client base all around the world. Driven by the interest in music and the data, we choose to explore more from the data of Spotify. Our goal is to build a “Top 50” music dataset with different categories of songs, including 62 lists of different countries. The data is created by the information of songs and artists and also based on a daily playlist from Spotify users. We would like our data to show the popularity of certain songs, artists and categories.
-
-
+Spotify is a digital music service that gives users access to millions of songs and has a huge client base all around the world. Driven by the interest in music and the data, I choose to explore more from the data of Spotify. Our goal is to build a “Top 50” music dataset with different categories of songs, including 62 lists of different countries. The data is created by the information of songs and artists and also based on a daily playlist from Spotify users. I would like our data to show the popularity of certain songs, artists and categories.
 
 
 ### Python Library Dependency
@@ -19,17 +17,11 @@ Dependency:
 *   requests
 
 
-### Usage
+### Authorization
 ---
-We have two files of our work, one is the Jupyter notebook version that processes step by step and another one is a python file includes a class that creates daily charts csv file directly.
+These information is required for Spotify Authorization, for further information please check out [the Authorization Guide](https://developer.spotify.com/documentation/general/guides/authorization-guide/).
 
-For using the class, plese check out the code below.
-```python
-charts = spotify_daily_charts_downloader(username = '', scope = '', client_id = '', client_secret = '')
-charts.download_chart()
-```
-
-These information is required for Spotify Authorization, for further information please check out the Notice below.
+Requried Information for authorization
 
 * username
 * scope 
@@ -37,25 +29,24 @@ These information is required for Spotify Authorization, for further information
 * client_secret 
 
 
-
-### Dataset Columns description
+### Dataset Columns Description
 ---
 
 | columns | definition |
 |:---:|:---|
-| continent |continent in chart|
-| country |country in chart|
+| continent |Name of continent that the country belongs to|
+| country |Name of country|
 | rank |Rank in data charts obtained from website is based on daily play counts in the country, which is not supported in API. We assume the rank as ascending order which is returned by API in its track information.|
-| song |The name of the song.|
-| artist |The name of the artist.|
-| album |The name of the album. In case of an album takedown, the value may be an empty string.|
+| song |Name of the song|
+| artist |Name of the artist|
+| album |Name of the album. In case of an album takedown, the value may be an empty string.|
 | release_date |The date the song was first released|
 | song_popularity |The popularity of the song. The value will be between 0 and 100, with 100 being the most popular. The song’s popularity is calculated from the popularity of all the song’s tracks.|
 | song_id |The Spotify ID for the song, each song has one id|
 | artist_id |The Spotify ID for the artist, each artist has one id|
 | album_id |The Spotify ID for the album, each album has one id|
 | followers |Information about the followers of the artist.|
-| date |the date we extract the data |
+| date |the date extract the data |
 | acousticness: | A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.   |
 | dannceability | Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.|
 | energy |Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.    |
@@ -73,20 +64,21 @@ These information is required for Spotify Authorization, for further information
 
 ### Notice
 ---
-1.	Spotify only offers Web API officially. But it documents the list of 3rd. party libraries for integrating with the Spotify Web API using several programming languages and platforms. And we use python to connect Spotify through the library.
+1.	Spotify only offers Web API officially. But it documents the list of 3rd. party libraries for integrating with the Spotify Web API using several programming languages and platforms. And I use python to connect Spotify through the library.
 
 
-2.	You are also required to register a Spotify account to get your credentials and put them as specified in the code. For the Authorization, please check out this page.
-https://developer.spotify.com/documentation/general/guides/authorization-guide/
+2.	You are also required to register a Spotify account to get your credentials and put them as specified in the code. For the Authorization, please check out [this page](
+https://developer.spotify.com/documentation/general/guides/authorization-guide/).
 
 
-3.	Rank in data charts obtained from website is based on daily play counts in the country, which is not supported in API. We assume the rank as ascending order which is returned by API in its track information.
+3.	Rank in data charts obtained from website is based on daily play counts in the country, which is not supported in API. I assume the rank as ascending order which is returned by API in its track information.
 
 
-4.	The category of songs we get from the dataset is determined by the category of its artist. However, many artists release many different styles of songs and no single style label can represent the entire songs. We will analyze each song’ acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness and tempo to determine its style. 
+4.	The category of songs I get from the dataset is determined by the category of its artist. However, many artists release many different styles of songs and no single style label can represent the entire songs. I will analyze each song’ acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness and tempo to determine its style. 
+
 
 ### Challenge and Further Works
 ---
-1. Since Spotipy does not support to get tracks information by using playlist ids, we implemented a temporary method adding into the library instance. It is recommended to keep tracking the update of the Spotipy and fix in in the furture.
+1. Since Spotipy does not support to get tracks information by using playlist ids, I implemented a temporary method adding into the library instance. It is recommended to keep tracking the update of the Spotipy and fix in in the furture.
 
-2. Since we worked on the Jupyter notebook first, which explains the process step by step, and transformed it to the Python file later, a class in the py file is not organized. We recommend to work refactoring on the class and divide methods more precisely.
+2. Since I worked on the Jupyter notebook first, which explains the process step by step, and transformed it to the Python file later, a class in the py file is not organized. I recommend to work refactoring on the class and divide methods more precisely.
