@@ -1,7 +1,7 @@
 
-#README
+README
 
-# Scrapping Spotify Top 50 Charts
+# Retrieving Spotify Top 50 Charts
 
 ### Introduction
 ---
